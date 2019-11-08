@@ -18,7 +18,7 @@ list containing two dataframes
 Create Train/Test Datasets for Modeling
 }
 \examples{
-data <- create_train_test(iris_df, 0.7)
+data <- create_train_test(iris, 0.7)
 training_data <- data$train
 testing_data <- data$test
 }
