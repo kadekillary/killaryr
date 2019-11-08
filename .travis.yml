@@ -1,0 +1,10 @@
+language: r
+sudo: false
+cache: packages
+
+warnings_are_errors: true
+
+notifications:
+    email:
+        on_success: chane
+        on_failure: always
