@@ -3,10 +3,18 @@ sudo: false
 cache: packages
 warnings_are_errors: false
 
+r_binary_packages:
+  - devtools
+  - roxygen2
+
 r_github_packages:
-- r-lib/testthat
+  - jimhester/covr
+
+after_success:
+  - Rscript -e 'devtools::install();devtools::test()'
+  - Rscript -e 'covr::codecov()'
 
 notifications:
-    email:
-        on_success: chane
-        on_failure: always
+  email:
+    on_success: change
+    on_failure: change
