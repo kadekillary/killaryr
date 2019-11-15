@@ -1,10 +1,17 @@
 language: r
 sudo: false
 cache: packages
-
 warnings_are_errors: false
 
+r_binary_packages:
+  - covr
+  - devtools
+
+after_success:
+  - Rscript -e 'library(devtools);devtools::test()'
+  - Rscript -e 'library(covr);covr::codecov()'
+
 notifications:
-    email:
-        on_success: chane
-        on_failure: always
+  email:
+    on_success: change
+    on_failure: change
