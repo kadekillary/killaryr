@@ -3,16 +3,14 @@ sudo: false
 cache: packages
 warnings_are_errors: false
 
-r_binary_packages:
+r_packages:
+  - covr
   - devtools
-  - roxygen2
-
-r_github_packages:
-  - jimhester/covr
+  - testthat
 
 after_success:
-  - Rscript -e 'devtools::install();devtools::test()'
-  - Rscript -e 'covr::codecov()'
+  - Rscript -e 'library(devtools);devtools::test()'
+  - Rscript -e 'library(covr);covr::codecov()'
 
 notifications:
   email:
