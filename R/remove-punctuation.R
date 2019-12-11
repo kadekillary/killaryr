@@ -7,7 +7,6 @@
 #'
 #' @examples
 #' remove_punctuation("4534dog 4328hello")
-#' "dog hello"
 remove_punctuation <- function(string) {
   gsub("[^[:alpha:][:space:]]*", "", string)
 }
